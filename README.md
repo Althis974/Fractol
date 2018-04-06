@@ -19,13 +19,61 @@ fractales !
   
   <table>
    <tr>
-       <td>Carmen</td>
-       <td>33 ans</td>
-       <td>Espagne</td>
+       <td>F1</td>
+       <td>Changer de couleur</td>
    </tr>
    <tr>
-       <td>Michelle</td>
-       <td>26 ans</td>
-       <td>États-Unis</td>
+       <td>F2 / F3</td>
+       <td>Varier la nuance de couleur</td>
+   </tr>
+     <tr>
+       <td>F4</td>
+       <td>Changer de fractale</td>
+   </tr>
+     <tr>
+       <td>F5</td>
+       <td>Rafraichir</td>
+   </tr>
+     <tr>
+       <td>+ / -</td>
+       <td>Varier le nombre d'iterations</td>
+   </tr>
+     <tr>
+       <td>R / G / B</td>
+       <td>Changer la nuance de couleur dominante</td>
+   </tr>
+     <tr>
+       <td>UP / W</td>
+       <td>Déplacer la fractal vers le haut</td>
+   </tr>
+       <tr>
+       <td>DOWN / S</td>
+       <td>Déplacer la fractal vers le bas</td>
+   </tr>
+       <tr>
+       <td>LEFT / A</td>
+       <td>Déplacer la fractal vers la gauche</td>
+   </tr>
+       <tr>
+       <td>RIGHT / D</td>
+       <td>Déplacer la fractal vers la droite</td>
+   </tr>
+       <tr>
+       <td>M</td>
+       <td>Activer le motion</td>
+   </tr>
+       <tr>
+       <td>SCROLL UP / LEFT CLICK</td>
+       <td>Zoom in</td>
+   </tr>
+     </tr>
+       <tr>
+       <td>SCROLL DOWN / RIGHT CLICK</td>
+       <td>Zoom out</td>
+   </tr>
+        </tr>
+       <tr>
+       <td>ESC</td>
+       <td>Quitter le programme</td>
    </tr>
 </table>
