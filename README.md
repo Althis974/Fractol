@@ -16,3 +16,4 @@ fractales !
   Ce nouveau projet sera pour vous l’occasion de vous perfectionner dans l’utilisation de la miniLibX, de vous faire découvrir/utiliser la notion mathémathique des nombres complexes ainsi que de vous faire aborder la problématique de l’optimisation en programmation graphique.
 
   N’oubliez pas de regarder les vidéos sur l’e-learning !
+<tr>oy</tr>
