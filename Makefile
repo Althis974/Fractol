@@ -6,7 +6,7 @@
 #    By: rlossy <marvin@le-101.fr>                  +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/03/14 14:34:00 by rlossy       #+#   ##    ##    #+#        #
-#   Updated: 2018/04/04 13:16:22 by rlossy      ###    #+. /#+    ###.fr     # #
+#   Updated: 2018/04/09 12:11:43 by rlossy      ###    #+. /#+    ###.fr     # #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -47,6 +47,7 @@ fclean: clean
 	@echo "\033[31m"
 	rm -f $(NAME)
 	@$(MAKE) -C $(L_FT) fclean
+	@$(MAKE) -C $(LX_FT) clean
 
 re: 
 	@$(MAKE) fclean 
@@ -58,6 +59,7 @@ build:
 
 $(NAME): $(OBJECTS)
 	@$(MAKE) -C $(L_FT)
+	@$(MAKE) -C $(LX_FT)
 	@echo "\033[32m"
 	gcc $(FLAGS) -I $(HEADER) $(OBJECTS) $(LIB_LNK) $(LIBX_LNK) $(FLAGX) -o $@
 
