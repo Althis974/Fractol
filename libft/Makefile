@@ -6,7 +6,7 @@
 #    By: rlossy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/10 16:26:09 by rlossy            #+#    #+#              #
-#    Updated: 2018/03/13 12:15:51 by rlossy      ###    #+. /#+    ###.fr      #
+#   Updated: 2018/04/17 16:18:54 by rlossy      ###    #+. /#+    ###.fr     # #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,9 @@ FILENAMES	+=	ft_tab2d_init.c
 SOURCES     =   $(addprefix ./, $(FILENAMES))
 OBJECTS     =   $(addprefix build/, $(FILENAMES:.c=.o))
 
+LOADIR		=	/Users/rlossy/unitest/load
+LOADF		=	$(LOADIR)/loading.sh
+
 .PHONY: all clean fclean re
 
 
@@ -47,24 +50,37 @@ all: $(NAME)
 
 
 clean:
-	    @echo "\033[31m"
-		    rm -rf build/
+		@echo "\033[31m"
+		@sh $(LOADF) $@ r n $(NAME)
+		@rm -rf build/
+		@printf "\n\033[1m\033[34m\t\t\t\t⥷ $(NAME)⭃\tObject Files\033[0m \
+		\033[1m⟿ \t\033[31mDeletion Success\033[0m ✅\n"
 
 fclean: clean
-	    @echo "\033[31m"
-		    rm -f $(NAME)
+		@echo "\033[31m"
+		@sh $(LOADF) $@ r n $(NAME)
+		@rm -f $(NAME)
+		@printf "\n\033[1m\033[34m\t\t\t\t⥷ $(NAME)⭃\tCompiled Files\033[0m \
+		\033[1m⟿ \t\033[31mDeletion Success\033[0m ✅\n"
 
 re: 
 	@$(MAKE) fclean
 	@$(MAKE) all
 
 build:
-	    @echo "\033[36m"
-		    mkdir build/
+		@echo "\033[36m"
+		@mkdir build/
 
 $(NAME): $(OBJECTS)
-	    @echo "\033[33m"
-		    ar crs $@ $(OBJECTS)
+		@printf "\n\033[1m\033[34m\t\t\t\t⥷ $(NAME)⭃\tObject Files\033[0m \
+		\033[1m⟿ \t\033[32mCreation Success\033[0m ✅\n"
+		@echo "\033[43m\033[30m"
+		@sh $(LOADF) $@ a n
+		@echo "\033[0m"
+		@ar crs $@ $(OBJECTS)
+		@printf "\n\033[1m\033[34m\t\t\t\t⥷ $@⭃ \tProject\t\t\033[0m\033[1m⟿ \
+		\033[32mCreation Success\033[0m ✅\n"
 
 build/%.o: ./%.c | build
-	    gcc -Wall -Wextra -Werror -I $(HEADER) -c $< -o $@
+		@sh $(LOADF) $< o y
+		@gcc -Wall -Wextra -Werror -I $(HEADER) -c $< -o $@
