@@ -79,6 +79,6 @@ $(NAME): $(OBJECTS)
 	@printf "\n\033[1m\033[34m\t\t\t\t⥷ $@⭃\tProject\t\t\033[0m \033[1m⟿  \
 		\033[32mCreation Success\033[0m ✅\n"
 
-build/%.o: srcs/%.c | build
+build/%.o: srcs/%.c $(HEADER) | build
 	@sh $(LOADF) $< o y
 	@gcc $(FLAGS) $(LIB_INC) -I $(HEADER) -c $< -o $@

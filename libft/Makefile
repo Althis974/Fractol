@@ -81,6 +81,6 @@ $(NAME): $(OBJECTS)
 		@printf "\n\033[1m\033[34m\t\t\t\t⥷ $@⭃ \tProject\t\t\033[0m\033[1m⟿ \
 		\033[32mCreation Success\033[0m ✅\n"
 
-build/%.o: ./%.c | build
+build/%.o: ./%.c $(HEADER) | build
 		@sh $(LOADF) $< o y
 		@gcc -Wall -Wextra -Werror -I $(HEADER) -c $< -o $@
