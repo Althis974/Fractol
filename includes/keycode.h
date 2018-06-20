@@ -6,7 +6,7 @@
 /*   By: rlossy <marvin@le-101.fr>                  +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/03/14 14:32:30 by rlossy       #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/03 14:51:44 by rlossy      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/06/20 11:19:29 by rlossy      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,12 +23,13 @@
 # define SEVEN 89
 # define EIGHT 91
 # define NINE 92
+# define PAD(x) ((x >= 83 && x <= 89) || (x >= 91 && x <= 92))
 
 # define A 0
 # define B 11
 # define C 8
 # define D 2
-# define E 4
+# define E 14
 # define F 3
 # define G 5
 # define H 4

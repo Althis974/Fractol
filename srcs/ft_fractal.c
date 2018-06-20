@@ -6,7 +6,7 @@
 /*   By: rlossy <rlossy@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/03/20 11:05:23 by rlossy       #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/05 16:07:00 by rlossy      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/06/19 15:01:58 by rlossy      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,8 +19,8 @@ int		ft_julia(t_env *f, int x, int y)
 	double		tmp;
 
 	nb_iter = -1;
-	f->frac.real = MINX + ((double)x * (MAXX - MINX) / MAX_LEN);
-	f->frac.img = MINY + ((double)y * (MAXY - MINY) / MAX_WID);
+	f->frac.real = MINX + ((double)x * (MAXX - MINX) / MAX_W);
+	f->frac.img = MINY + ((double)y * (MAXY - MINY) / MAX_H);
 	while (++nb_iter < f->frac.max_iter && (f->frac.real * f->frac.real +
 				f->frac.img * f->frac.img) < 4)
 	{
@@ -40,8 +40,8 @@ int		ft_mandel(t_env *f, int x, int y)
 	nb_iter = -1;
 	f->frac.real = 0.0;
 	f->frac.img = 0.0;
-	f->frac.constr = MINX + ((double)x * (MAXX - MINX) / MAX_LEN);
-	f->frac.consti = MINY + ((double)y * (MAXY - MINY) / MAX_WID);
+	f->frac.constr = MINX + ((double)x * (MAXX - MINX) / MAX_W);
+	f->frac.consti = MINY + ((double)y * (MAXY - MINY) / MAX_H);
 	while (++nb_iter < f->frac.max_iter && (f->frac.real * f->frac.real +
 				f->frac.img * f->frac.img) < 4)
 	{
@@ -61,8 +61,8 @@ int		ft_tricorn(t_env *f, int x, int y)
 	nb_iter = -1;
 	f->frac.real = 0.0;
 	f->frac.img = 0.0;
-	f->frac.constr = MINX + ((double)x * (MAXX - MINX) / MAX_LEN);
-	f->frac.consti = MINY + ((double)y * (MAXY - MINY) / MAX_WID);
+	f->frac.constr = MINX + ((double)x * (MAXX - MINX) / MAX_W);
+	f->frac.consti = MINY + ((double)y * (MAXY - MINY) / MAX_H);
 	while (++nb_iter < f->frac.max_iter && (f->frac.real * f->frac.real +
 				f->frac.img * f->frac.img) < 4)
 	{
@@ -83,8 +83,8 @@ int		ft_sauron(t_env *f, int x, int y)
 	f->frac.img = 0.0;
 	if (!f->mouse.on)
 		f->frac.man = 12.0;
-	f->frac.constr = MINX + ((double)x * (MAXX - MINX) / MAX_LEN);
-	f->frac.consti = MINY + ((double)y * (MAXY - MINY) / MAX_WID);
+	f->frac.constr = MINX + ((double)x * (MAXX - MINX) / MAX_W);
+	f->frac.consti = MINY + ((double)y * (MAXY - MINY) / MAX_H);
 	while (++nb_iter < f->frac.max_iter && (f->frac.real * f->frac.real +
 				f->frac.img * f->frac.img) < 4)
 	{
@@ -103,8 +103,8 @@ int		ft_newton(t_env *f, int x, int y)
 
 	tmp = 1.0;
 	nb_iter = -1;
-	f->frac.constr = MINX + ((double)x * (MAXX - MINX) / MAX_LEN);
-	f->frac.consti = MINY + ((double)y * (MAXY - MINY) / MAX_WID);
+	f->frac.constr = MINX + ((double)x * (MAXX - MINX) / MAX_W);
+	f->frac.consti = MINY + ((double)y * (MAXY - MINY) / MAX_H);
 	f->frac.real = f->frac.constr;
 	f->frac.img = f->frac.consti;
 	while (++nb_iter < f->frac.max_iter && tmp > 0.000001)

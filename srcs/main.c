@@ -6,12 +6,20 @@
 /*   By: rlossy <rlossy@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/03/19 11:21:10 by rlossy       #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/05 16:48:54 by rlossy      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/06/20 14:49:21 by rlossy      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
+
+void	ft_quit(t_env *f)
+{
+	mlx_destroy_image(f->mlx.mlx_ptr, f->mlx.img.img_ptr);
+	mlx_clear_window(f->mlx.mlx_ptr, f->mlx.win);
+	mlx_destroy_window(f->mlx.mlx_ptr, f->mlx.win);
+	exit(0);
+}
 
 void	ft_initialization(t_env *f, int type)
 {
@@ -31,13 +39,14 @@ void	ft_initialization(t_env *f, int type)
 	f->frac.man = 2.0;
 	f->mouse.x = 0.0;
 	f->mouse.y = 0.0;
-	f->mouse.zoom = 0;
+	f->mouse.zoom = 0.0;
 	f->frac.tree.on = (f->frac.type == 9) ? 1 : 0;
 }
 
 void	ft_init_tree(t_env *f)
 {
 	f->frac.tree.iter = 10;
+	f->frac.tree.pos = 0.0;
 	f->frac.tree.size1 = 1;
 	f->frac.tree.size2 = 1;
 	f->frac.tree.col.red = 64;
@@ -68,7 +77,5 @@ int		main(int ac, char **av)
 	if (f.frac.tree.on)
 		ft_init_tree(&f);
 	ft_env_init(&f);
-	free(&f);
-	ft_bzero(&f, sizeof(t_env));
 	return (0);
 }

@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_color.c                                       .::    .:/ .      .::   */
+/*   ft_keycode_partwo.c                              .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: rlossy <rlossy@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/03/19 17:04:17 by rlossy       #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/19 15:01:58 by rlossy      ###    #+. /#+    ###.fr     */
+/*   Created: 2018/06/20 11:11:59 by rlossy       #+#   ##    ##    #+#       */
+/*   Updated: 2018/06/20 11:14:11 by rlossy      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-int		ft_color(int nb_iter, t_env *f)
+void	ft_switch(int key, t_env *f)
 {
-	if (nb_iter == f->frac.max_iter)
-		return (0);
-	f->frac.col.coef = f->frac.freq * (nb_iter + 1);
-	f->frac.col.red = cos(f->frac.col.coef) * 64 + 128;
-	f->frac.col.green = cos(f->frac.col.coef + f->frac.col.val) * 32 + 128;
-	f->frac.col.blue = (cos(f->frac.col.coef + 2 * f->frac.col.val) * 16 + 128);
-	return ((f->frac.col.red << f->frac.col.sw1) +
-			(f->frac.col.blue << f->frac.col.sw2) + f->frac.col.green);
+	if (key == ONE)
+		f->frac.type = 1;
+	else if (key == TWO)
+		f->frac.type = 2;
+	else if (key == THREE)
+		f->frac.type = 3;
+	else if (key == FOUR)
+		f->frac.type = 4;
+	else if (key == FIVE)
+		f->frac.type = 5;
+	else if (key == SIX)
+		f->frac.type = 6;
+	else if (key == SEVEN)
+		f->frac.type = 7;
+	else if (key == EIGHT)
+		f->frac.type = 8;
+	else if (key == NINE)
+		f->frac.type = 9;
+	ft_reset(f);
 }

@@ -6,7 +6,7 @@
 /*   By: rlossy <rlossy@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/04/04 14:31:41 by rlossy       #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/05 16:11:09 by rlossy      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/06/19 15:01:58 by rlossy      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,8 +21,8 @@ int		ft_burning(t_env *f, int x, int y)
 	nb_iter = -1;
 	f->frac.real = 0.0;
 	f->frac.img = 0.0;
-	f->frac.constr = MINX + ((double)x * (MAXX - MINX) / MAX_LEN);
-	f->frac.consti = MINY + ((double)y * (MAXY - MINY) / MAX_WID);
+	f->frac.constr = MINX + ((double)x * (MAXX - MINX) / MAX_W);
+	f->frac.consti = MINY + ((double)y * (MAXY - MINY) / MAX_H);
 	while (++nb_iter < f->frac.max_iter && (f->frac.real * f->frac.real +
 				f->frac.img * f->frac.img) < 4)
 	{
@@ -40,8 +40,8 @@ int		ft_clover(t_env *f, int x, int y)
 	double		tmp;
 
 	nb_iter = -1;
-	f->frac.real = MINX + ((double)x * (MAXX - MINX) / MAX_LEN);
-	f->frac.img = MINY + ((double)y * (MAXY - MINY) / MAX_WID);
+	f->frac.real = MINX + ((double)x * (MAXX - MINX) / MAX_W);
+	f->frac.img = MINY + ((double)y * (MAXY - MINY) / MAX_H);
 	f->frac.constr = 0.285;
 	f->frac.consti = 0.01;
 	while (++nb_iter < f->frac.max_iter && (f->frac.real * f->frac.real +
@@ -63,8 +63,8 @@ int		ft_dragon(t_env *f, int x, int y)
 	nb_iter = -1;
 	f->frac.real = 0.0;
 	f->frac.img = 0.0;
-	f->frac.constr = MINX + ((double)x * (MAXX - MINX) / MAX_LEN);
-	f->frac.consti = MINY + ((double)y * (MAXY - MINY) / MAX_WID);
+	f->frac.constr = MINX + ((double)x * (MAXX - MINX) / MAX_W);
+	f->frac.consti = MINY + ((double)y * (MAXY - MINY) / MAX_H);
 	while (++nb_iter < f->frac.max_iter && (f->frac.real * f->frac.real +
 				f->frac.img * f->frac.img) < 4)
 	{

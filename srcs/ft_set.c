@@ -6,7 +6,7 @@
 /*   By: rlossy <rlossy@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/03/20 10:36:34 by rlossy       #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/05 16:48:54 by rlossy      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/06/19 15:01:58 by rlossy      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,9 +29,9 @@ void	ft_set_pixel(t_env *f, int x, int y)
 
 void	ft_set_line(t_env *f, t_pos start, t_pos end)
 {
-	double	dd;
 	double	x;
 	double	y;
+	double	dd;
 	double	dx;
 	double	dy;
 
@@ -59,7 +59,7 @@ void	ft_set_tree(t_env *f, int x, int y, int color)
 	r = (color) >> 16;
 	g = (color) >> 8;
 	b = (color);
-	if (y >= 0 && x >= 0 && y < MAX_LEN && x < MAX_WID)
+	if (y >= 0 && x >= 0 && y < MAX_H && x < MAX_W)
 	{
 		f->mlx.img.data[(y * f->mlx.img.size_l)
 			+ ((f->mlx.img.bpp / 8) * x) + 2] = (char)r;

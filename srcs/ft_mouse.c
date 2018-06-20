@@ -1,55 +1,58 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_kcode.c                                       .::    .:/ .      .::   */
+/*   ft_mouse.c                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: rlossy <rlossy@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/03/26 12:08:00 by rlossy       #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/05 16:33:05 by rlossy      ###    #+. /#+    ###.fr     */
+/*   Created: 2018/06/19 11:36:54 by rlossy       #+#   ##    ##    #+#       */
+/*   Updated: 2018/06/19 12:03:15 by rlossy      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-int		ft_motion(int x, int y, t_env *f)
-{
-	if (x >= 0 && x <= MAX_LEN && y >= 0 && y <= MAX_WID && f->mouse.on
-			&& (f->frac.type == 1))
-	{
-		f->frac.constr = MINX + ((x * MAXX) / MAX_LEN);
-		f->frac.consti = MINY + ((y * MAXY) / MAX_WID);
-	}
-	else if (x >= 0 && x <= MAX_LEN && y >= 0 && y <= MAX_WID && f->mouse.on
-			&& f->frac.type > 1 && f->frac.type <= 8)
-		f->frac.man = MINX + ((x * MAXX) / MAX_LEN) - MINY
-			+ ((y * MAXY) / MAX_WID);
-	else if (x >= 0 && x <= MAX_LEN && y >= 0 && y <= MAX_WID && f->mouse.on
-			&& (f->frac.type == 9))
-	{
-		f->frac.tree.size1 = (double)y / 600;
-		f->frac.tree.size2 = (double)x / 600;
-	}
-	ft_launch(f);
-	return (0);
-}
-
 int		ft_mouse(int button, int x, int y, t_env *f)
 {
 	double tmpx;
 	double tmpy;
 
-	f->mouse.x = MINX + (double)x * (MAXX - MINX) / MAX_LEN;
-	f->mouse.y = MINY + (double)y * (MAXY - MINY) / MAX_WID;
+	f->mouse.x = MINX + (double)x * (MAXX - MINX) / MAX_H;
+	f->mouse.y = MINY + (double)y * (MAXY - MINY) / MAX_W;
 	tmpx = MINX;
 	tmpy = MINY;
-	if ((button == 1 || button == 4) && (x >= 0 && x <= MAX_LEN)
-			&& (y >= 0 && y <= MAX_WID) && !f->mouse.on)
-		ft_zoom(f, tmpx, tmpy, 1);
-	else if ((button == 2 || button == 5) && (x >= 0 && x <= MAX_LEN)
-			&& (y >= 0 && y <= MAX_WID) && !f->mouse.on && f->mouse.zoom)
-		ft_zoom(f, tmpx, tmpy, 0);
+	if (f->frac.type != 9)
+	{
+		if ((button == 1 || button == 4) && (x >= 0 && x <= MAX_W) &&
+			(y >= 0 && y <= MAX_H) && !f->mouse.on)
+			ft_zoom(f, tmpx, tmpy, 1);
+		else if ((button == 2 || button == 5) && (x >= 0 && x <= MAX_W) &&
+			(y >= 0 && y <= MAX_H) && !f->mouse.on && f->mouse.zoom)
+			ft_zoom(f, tmpx, tmpy, 0);
+	}
+	ft_launch(f);
+	return (0);
+}
+
+int		ft_motion(int x, int y, t_env *f)
+{
+	if (x >= 0 && x <= MAX_W && y >= 0 && y <= MAX_H && f->mouse.on
+			&& (f->frac.type == 1))
+	{
+		f->frac.constr = MINX + ((x * MAXX) / MAX_H);
+		f->frac.consti = MINY + ((y * MAXY) / MAX_W);
+	}
+	else if (x >= 0 && x <= MAX_W && y >= 0 && y <= MAX_H && f->mouse.on
+			&& f->frac.type > 1 && f->frac.type <= 8)
+		f->frac.man = MINX + ((x * MAXX) / MAX_W) - MINY
+			+ ((y * MAXY) / MAX_H);
+	else if (x >= 0 && x <= MAX_W && y >= 0 && y <= MAX_H && f->mouse.on
+			&& (f->frac.type == 9))
+	{
+		f->frac.tree.size1 = (double)y / 600;
+		f->frac.tree.size2 = (double)x / 600;
+	}
 	ft_launch(f);
 	return (0);
 }

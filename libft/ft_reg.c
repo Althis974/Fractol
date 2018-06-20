@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_putallnbr_nosign.c                            .::    .:/ .      .::   */
+/*   ft_reg.c                                         .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: rlossy <marvin@le-101.fr>                  +:+   +:    +:    +:+     */
+/*   By: rlossy <rlossy@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/01/18 14:45:27 by rlossy       #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/19 15:01:58 by rlossy      ###    #+. /#+    ###.fr     */
+/*   Created: 2018/05/16 11:11:30 by rlossy       #+#   ##    ##    #+#       */
+/*   Updated: 2018/06/05 09:30:33 by rlossy      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putallnbr_nosign(intmax_t n)
+double	ft_reg(double x, double min, double max)
 {
-	if (n == INT64_MIN)
-	{
-		ft_putchar('9');
-		ft_putallnbr(223372036854775808);
-	}
-	else
-	{
-		if (n < 0)
-			if (n != INT64_MIN)
-				n *= -1;
-		if (n < 10)
-			ft_putchar(n + '0');
-		if (n > 9)
-		{
-			ft_putallnbr(n / 10);
-			ft_putchar(n % 10 + '0');
-		}
-	}
+	x = x < min ? min : x;
+	x = x > max ? max : x;
+	return (x);
 }

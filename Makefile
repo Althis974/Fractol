@@ -6,7 +6,7 @@
 #    By: rlossy <marvin@le-101.fr>                  +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/03/14 14:34:00 by rlossy       #+#   ##    ##    #+#        #
-#   Updated: 2018/04/17 16:18:54 by rlossy      ###    #+. /#+    ###.fr     # #
+#   Updated: 2018/06/19 11:37:41 by rlossy      ###    #+. /#+    ###.fr     # #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -16,7 +16,8 @@ LIB_DIR		=	./libft
 LIBX_DIR	=	./minilibx_macos
 HEADER		=	./includes/
 FILENAMES	=	main.c ft_color.c ft_env.c ft_fractal.c ft_set.c ft_trace.c
-FILENAMES	+=	ft_keycode.c ft_kcode.c ft_fractal_partwo.c
+FILENAMES	+=	ft_keycode.c ft_mouse.c ft_fractal_partwo.c ft_display.c
+FILENAMES   +=  ft_keycode_partwo.c
 
 SOURCES		=	$(addprefix srcs/, $(FILENAMES))
 OBJECTS		=	$(addprefix build/, $(FILENAMES:.c=.o)) 

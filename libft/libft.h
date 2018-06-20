@@ -6,7 +6,7 @@
 /*   By: rlossy <marvin@le-101.fr>                  +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 09:25:30 by rlossy       #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/19 10:51:33 by rlossy      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/06/19 15:01:58 by rlossy      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,6 +21,7 @@
 # include <wchar.h>
 # include <sys/types.h>
 # include <sys/uio.h>
+# include <math.h>
 
 # define BUFF_SIZE 1000
 # define WSP(x) x == '\t' || x == '\n' || x == ' '
@@ -31,6 +32,32 @@ typedef	struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+/*
+**	[Vector structure]
+**
+**	Basic name for 3 axes
+*/
+
+typedef struct		s_vec
+{
+	double			x;
+	double			y;
+	double			z;
+}					t_vec;
+
+/*
+**	[Color structure]
+**
+**	Shade of color from RGB
+*/
+
+typedef struct		s_col
+{
+	double			red;
+	double			green;
+	double			blue;
+}					t_col;
 
 char				*ft_strdup(const char *src);
 size_t				ft_strlen(const char *str);
@@ -84,7 +111,7 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
-char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strjoin(char *s1, char *s2, int free);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_strtrim(char const *s);
 
@@ -131,5 +158,25 @@ size_t				ft_wcharnput(wchar_t const *s, size_t len, int print);
 int					get_next_line(const int fd, char **line);
 int					ft_word_count(const char *s, char c);
 int					**ft_tab2d_init(size_t x, size_t y);
+double				ft_reg(double x, double min, double max);
+char				*ft_ftoa(double nb);
+
+t_vec				ft_vadd(t_vec *v1, t_vec *v2);
+t_vec				ft_vsub(t_vec *v1, t_vec *v2);
+t_vec				ft_vmul(t_vec *v1, t_vec *v2);
+t_vec				ft_vdiv(t_vec *v1, t_vec *v2);
+
+t_vec				ft_vaddx(t_vec *v1, double x);
+t_vec				ft_vsubx(t_vec *v1, double x);
+t_vec				ft_vmulx(t_vec *v1, double x);
+t_vec				ft_vdivx(t_vec *v1, double x);
+
+t_vec				ft_vcross(t_vec *v1, t_vec *v2);
+t_vec				ft_vreflect(t_vec *intensity, t_vec *normal);
+void				ft_vnorm(t_vec *v);
+void				ft_vreg(t_vec *v, double a, double b);
+double				ft_vdot(t_vec *v1, t_vec *v2);
+double				ft_vlen(t_vec *v);
+double				ft_vdist(t_vec *v1, t_vec *v2);
 
 #endif
