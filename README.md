@@ -24,7 +24,7 @@ make
 ```
 
 ```
-./fdf fractal_number
+./fractol fractal_number
 ```
 
 ## Fonctionnalités
