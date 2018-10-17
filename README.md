@@ -16,3 +16,87 @@ fractales !
   Ce nouveau projet sera pour vous l’occasion de vous perfectionner dans l’utilisation de la miniLibX, de vous faire découvrir/utiliser la notion mathémathique des nombres complexes ainsi que de vous faire aborder la problématique de l’optimisation en programmation graphique.
 
   N’oubliez pas de regarder les vidéos sur l’e-learning !
+
+## How to
+
+```
+make
+```
+
+```
+./fdf fractal_number
+```
+
+## Fonctionnalités
+
+ <table>
+   <tr>
+       <td>F1</td>
+       <td>Changer la palette de la couleur dominante</td>
+   </tr>
+   <tr>
+       <td>F2 / F3</td>
+       <td>Varier la nuance de couleur</td>
+   </tr>
+     <tr>
+       <td>F5</td>
+       <td>Rafraichir</td>
+   </tr>
+     <tr>
+       <td>SCROLL UP / LEFT CLICK</td>
+       <td>Zoom In</td>
+   </tr>
+     <tr>
+       <td>SCROLL DOWN / RIGHT CLICK</td>
+       <td>Zoom out</td>
+   </tr>
+     <tr>
+       <td>R / G / B</td>
+       <td>Changer la couleur dominante</td>
+   </tr>
+     <tr>
+       <td>UP / W</td>
+       <td>Déplacer la fractale vers le haut</td>
+   </tr>
+       <tr>
+       <td>DOWN / S</td>
+       <td>Déplacer la fractale vers le bas</td>
+   </tr>
+       <tr>
+       <td>LEFT / A</td>
+       <td>Déplacer la fractale vers la gauche</td>
+   </tr>
+       <tr>
+       <td>RIGHT / D</td>
+       <td>Déplacer la fractale vers la droite</td>
+   </tr>
+       <tr>
+       <td>+ / -</td>
+       <td>Varier le nombre d'itérations</td>
+   </tr>
+     </tr>
+       <tr>
+       <td>M</td>
+       <td>Activer / Désactiver le motion</td>
+   </tr>
+        </tr>
+       <tr>
+       <td>ESC</td>
+       <td>Quitter le programme</td>
+   </tr>
+</table>
+
+## Exemples
+
+### Julia
+![img](https://i.imgur.com/Ew9T7E8.png)
+
+### Eye of Sauron
+![img](https://i.imgur.com/T1DFXSC.png)
+
+### Brain
+
+![img](https://i.imgur.com/R9wsc3b.png)
+
+### Last but not least
+![](https://media.giphy.com/media/KyBcuRtr6lALQGm0Sg/giphy.gif)
