@@ -44,7 +44,7 @@ make
    </tr>
      <tr>
        <td>SCROLL UP / LEFT CLICK</td>
-       <td>Zoom In</td>
+       <td>Zoom in</td>
    </tr>
      <tr>
        <td>SCROLL DOWN / RIGHT CLICK</td>
