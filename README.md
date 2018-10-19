@@ -38,49 +38,47 @@ make
        <td>F2 / F3</td>
        <td>Varier la nuance de couleur</td>
    </tr>
-     <tr>
+   <tr>
        <td>F5</td>
        <td>Rafraichir</td>
    </tr>
-     <tr>
+   <tr>
        <td>SCROLL UP / LEFT CLICK</td>
        <td>Zoom in</td>
    </tr>
-     <tr>
+   <tr>
        <td>SCROLL DOWN / RIGHT CLICK</td>
        <td>Zoom out</td>
    </tr>
-     <tr>
+   <tr>
        <td>R / G / B</td>
        <td>Changer la couleur dominante</td>
    </tr>
-     <tr>
+   <tr>
        <td>UP / W</td>
        <td>Déplacer la fractale vers le haut</td>
    </tr>
-       <tr>
+   <tr>
        <td>DOWN / S</td>
        <td>Déplacer la fractale vers le bas</td>
    </tr>
-       <tr>
+   <tr>
        <td>LEFT / A</td>
        <td>Déplacer la fractale vers la gauche</td>
    </tr>
-       <tr>
+   <tr>
        <td>RIGHT / D</td>
        <td>Déplacer la fractale vers la droite</td>
    </tr>
-       <tr>
+   <tr>
        <td>+ / -</td>
        <td>Varier le nombre d'itérations</td>
    </tr>
-     </tr>
-       <tr>
+   <tr>
        <td>M</td>
        <td>Activer / Désactiver le motion</td>
    </tr>
-        </tr>
-       <tr>
+   <tr>
        <td>ESC</td>
        <td>Quitter le programme</td>
    </tr>
